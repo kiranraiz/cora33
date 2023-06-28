@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&family=Oxygen:wght@300&family=Poppins:wght@300;400&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
+      * {
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        list-style: none;
+        text-transform: capitalize;
+        border: none;
+        transition: 0.2s linear;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      body {
+        width: 100%;
+        font-family: 'EB Garamond';font-size: 22px;
+}
+ /* root variables  */
+ :root {
+        --green: green;
+        --black: #130f40;
+        --light-color: #666;
+        --pink: antiquewhite;
+        --outline: 1px solid rgba(146, 135, 135, 0.5);
+        --border: 1px solid rgba(0, 0, 0, 0.5);
+        --box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.6);
+        --white: white;
+        --blue: rgb(19, 19, 97);
+      } 
+      /* root variables  end */
+    
+    
+      /* utility classes */
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+
+      }
+      h1 {
+        font-weight: 700;
+        line-height: 50px;
+        font-size: 45px;
+        color: green;
+      }
+      p {
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 25px;
+
+      }
+      .opacity {
+        opacity: 0.5;
+      }
+      .btn{
+        width: 100px;
+        height: 30px;
+        padding:0px 10px;
+        font-weight: 700;
+        font-size: 15px;
+        border: 2px solid rgb(173, 164, 164);
+        border-radius: 5px;
+        cursor: pointer;
+        line-height:30px;
+        background-color: aliceblue;
+       margin: 5px 0px;
+      }
+      .normal{
+        padding:0px 2px;
+        font-weight: 700;
+        font-size: 15px;
+        border: 2px solid rgb(173, 164, 164);
+        border-radius: 3px;
+        cursor: pointer;
+        line-height:30px;
+        background-color: white;
+       margin: 5px 0px;
+      }
+      .section-p1{
+        padding: 40px 100px;
+      }
+      h6{
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 30px;
+        margin-top: 10px;
+        border-radius: 2px;
+      }
+      h5{
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 20px;
+        margin-top: 2px;
+        border-radius: 2px;
+      }
+    /* utility classes end */
+      
+    
+      
+
+    
+
+  
+    
+    
+      
+     
+      .img-pro img{
+width: 50%;
+      }
+
+
+ 
+  
+       .fe-box2 .des{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+       }
+       .fe-box2 .des h4{
+        font-weight: 700;
+        font-size: 18px;
+        color: rgb(4, 62, 4);
+        margin-top: 7px;
+
+       }
+       .star i{
+        color: rgb(243, 181, 25);
+
+
+       }
+       .img-pro .kiran{
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        line-height: 30px;
+        color: rgb(26, 106, 26);
+        background-color: rgb(220, 235, 220);
+        text-align: center;
+       right: 10px ;
+       bottom: 10px;
+       border: 1px solid rgb(233, 222, 222);
+       position: absolute;
+       }
+       .img-pro .kiran:hover{
+        background-color: rgb(231, 144, 174);
+
+       }
+       .img-pro hr{
+        opacity: 0.5;
+       }
+     
+       .fe-box2 .img-pro{
+        margin: 20px 15px;
+       }
+       .fe-box2 {
+        margin-top: 50px;
+       }
+ 
+.n-button{
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 0px 8px;
+        border: 1px solid transparent;
+        outline: none;
+ border-radius: 4px;
+ font-size: 14px;
+
+
+}
+  /* header start  */
+  .header {
+    background-color: antiquewhite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 8%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+      }
+      .header .navbar {
+        display: flex;
+        padding: 0.6rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .header .navbar a {
+        margin: 0 2.9rem;
+        color: var(--black);
+        font-size: 1rem;
+      }
+      .header .navbar a:hover {
+        color: rgb(76, 103, 22);
+        transition: 0.2s linear;
+      }
+      .header .burger {
+        display: none;
+      }
+      .navbar a:hover,
+      .navbar a.active {
+        color: green;
+      }
+      .navbar a {
+        position: relative;
+      }
+      .navbar a.active::after,
+      .navbar a:hover::after {
+        content: "";
+        width: 60%;
+        height: 2px;
+        bottom: -4px;
+        left: 10px;
+        position: absolute;
+        background-color: green;
+      }
+      /* header end */
+
+
+#blog-head{
+   background: rgba(0, 0, 0, 0.5) url("cora\ imgs/blog head.jpeg");
+   background-size:100% 100%;
+   background-repeat: no-repeat;
+   height: 55vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    flex-direction: column;
+    color: white;
+    background-blend-mode: darken;
+  
+}
+#blog-head h1{
+  color: white;
+  font-size:2.5rem;
+  line-height: 50px;
+}
+#blog-head p{
+  color:white;
+  font-size:.9rem;
+}
+
+/* blog style */
+#blog{
+  padding: 150px 150px 0px 150px;
+  
+
+}
+.blog-box{
+  display: flex;
+  padding-bottom: 90px;
+  align-items: center;
+  /* justify-content: space-around; */
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+.blog-img{
+width: 40%;
+
+}
+.blog-img img{
+width: 70%;
+/* height: 300px; */
+object-fit: cover;
+/* margin-left: 100px; */
+}
+.blog-details{
+  width: 50%;
+
+}
+.blog-details h4{
+line-height: 70px;
+font-weight: 700;
+font-size: 20px;
+}
+.blog-details p{
+line-height: 20px;
+font-weight: 300;
+/* font-size: 20px; */
+font-family: Arial, Helvetica, sans-serif;
+}
+.blog-details a{
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 700;
+line-height: 70px;
+font-size: 15px;
+color: black;
+cursor: pointer;
+position: relative;
+}
+.blog-details a:hover{
+color: rgb(16, 77, 16);
+}
+.blog-details a::after{
+
+content: "";
+width: 50px;
+height: 3px;
+right: -60px;
+top: 10px;
+position: absolute;
+background-color: black;
+cursor: pointer;
+}
+.blog-details a:hover::after{
+color: rgb(19, 69, 19);
+
+}
+ #blog .blog-box h1{
+font-weight: 700;
+top: -40px;
+color: rgb(226, 218, 218);
+left: 45px;
+position: absolute;
+font-size: 70px;
+z-index: -30;
+
+}
+/* pagination strtr  */
+.pagination{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.pagination a{
+  color:white;
+  background-color: rgb(10, 84, 10);
+  padding: .7rem 1.6rem;
+  margin:  0 .3rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+/* .newsletter start  */
+.newsletter{
+background-color: rgb(33, 33, 96);
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 15px;
+
+}
+.newsletter .part-1 h2{
+color: white;
+font-size: 1.9rem;
+line-height: 45px;
+}
+.newsletter .part-1 p{
+color: rgb(214, 207, 207);
+font-size: .9rem;
+line-height: 30px;
+}
+.newsletter .part-1 span{
+color: orange;
+}
+.newsletter .part-1,.part-2 {
+  padding: 2rem 9%;
+}
+.newsletter .part-2 input{
+padding:.7rem;
+font-size: .9rem;
+border-radius: 4px;
+border: 1px solid transparent;
+outline: none;
+width: 100%;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+}
+.newsletter .part-2 {
+display: flex;
+width: 45%;
+}
+.newsletter .part-2 .sign-up{
+padding:.7rem;
+background-color: rgb(13, 68, 13);
+font-size: 1.1rem;
+color: white;
+white-space: nowrap;
+border-radius: 4px;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+
+}
+/* .newsletter end  */
+
+/* footer start  */
+.footer .box-container{
+    display: grid;
+   grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr)) ;
+    overflow: hidden;
+    gap: .1rem;
+    padding: 2rem 1rem ;
+    margin-top: 25px;
+}
+.footer  .box-container .box{
+ justify-content: center;
+ align-items: start;
+ padding: .5rem 2rem;
+ display: flex;
+ flex-direction: column;
+}
+.footer  .box-container .box h3{
+  font-size: 1.3rem;
+  line-height: 70px;
+  color: var(--black);
+}
+.footer  .box-container .box .logo img{
+  width: 90px;
+}
+.footer  .box-container .box .social a{
+  width: 40px;
+  height: 40px;
+  background-color:cornflowerblue;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+  color: rgb(33, 33, 96);
+}
+.footer  .box-container .box .social a:hover{
+  padding: .3rem 0;
+  color: white;
+  background-color: rgb(33, 33, 96);
+}
+.footer .box-container .box .links i:hover{
+    padding-left:2rem;
+}
+.footer  .box-container .box .contact a{
+  font-size: .9rem;
+color: var(--black);
+line-height: 25px;
+}
+.footer  .box-container .box .contact span{
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 25px;
+}
+.footer  .box-container .box .links{
+  display: flex;
+  flex-direction: column;
+}
+.footer  .box-container .box .links a{
+color: var(--light-color);
+font-size: 1rem;
+line-height: 25px;
+margin-left: .4rem;
+}
+.footer  .box-container .box .links i{
+  color: cornflowerblue ;
+}
+.footer  .box-container .box .google{
+  display: flex;
+}
+.footer  .box-container .box .visa img{
+width: 210px;
+margin-top: 10px;
+}
+.footer  .box-container .box h6{
+  font-size: 1rem;
+  color: var(--light-color);
+  line-height: 45px;
+}
+.footer{
+  background-color: #eee;
+}
+.footer  .box-container .box .google img{
+  width: 100px;
+  margin: 5px;
+}
+.footer  .box-container .box p{
+  font-size: 1rem;
+  color: var(--black);
+  line-height: 50px;
+}
+.footer-2 {
+  padding: 1rem;
+  background-color: white;
+  color: rgb(141, 136, 136);
+  font-size: 1rem;
+}
+/* footer end */
+/* REsponsive  start*/
+
+
+@media (max-width:375px){
+   /* header start*/
+ .header .burger {
+          display: inline-block;
+          margin-left: 280px;
+          font-size: 1.2rem;
+        }
+        .header .navbar {
+          position: absolute;
+          top: 110%;
+          width: 17rem;
+          right: -110%;
+          padding: 1rem 0.5rem;
+          background-color: white;
+          border-radius: 5px;
+          box-shadow: var(--box-shadow);
+          display: flex;
+          flex-direction: column;
+        }
+        .header .navbar.active {
+          right: 0.1rem;
+          transition: 0.2s linear;
+        }
+        .header .navbar a {
+          margin: 12px;
+          font-size: 1.4rem;
+          color: var(--black);
+        }
+        /* header end  */
+        #blog-head{
+   
+   height: 40vh;
+  }
+  #blog-head h1{
+  color: white;
+  font-size:2rem;
+  line-height: 50px;
+}
+#blog-head p{
+  color:white;
+  font-size:.8rem;
+}
+  
+  /* blog page start */
+  #blog .blog-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #blog{
+    padding: 50px 50px 0px 50px;
+  }
+  .blog-box .blog-details h4{
+line-height: 23px;
+}
+.blog-box .blog-details a{
+line-height: 15px;
+font-size: 13px;
+margin-top: 100px;
+}
+#blog .blog-img  img{
+width: 100%;
+margin-bottom: 30px;
+
+}
+#blog .blog-img  {
+width: 100%;
+
+
+}
+.blog-box .blog-details {
+width: 100%;
+}
+
+  h2 {
+      
+      font-size: 20px;
+
+
+    }
+    h1 {
+      
+      font-size: 23px;
+      line-height: 25px;
+     
+    }
+    p {
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 15px;
+
+    }
+.text-part{
+      margin-bottom: 310px;
+            } 
+
+ .section-p1 {
+    padding: 50px 0px;
+}
+/* .newsletter start  */
+.newsletter{
+background-color: rgb(33, 33, 96);
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: column;
+padding: .5rem 5%;
+}
+.newsletter .part-1 h2{
+color: white;
+font-size: 1.5rem;
+line-height: 45px;
+}
+.newsletter .part-1 p{
+color: rgb(214, 207, 207);
+font-size: .7rem;
+line-height: 20px;
+}
+.newsletter .part-1,.part-2 {
+  padding:  .7rem 1rem;
+}
+.newsletter .part-2 input{
+padding:.7rem;
+font-size: .9rem;
+border-radius: 4px;
+border: 1px solid transparent;
+outline: none;
+width: 100%;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+
+}
+.newsletter .part-2 {
+display: flex;
+width:95%;
+margin-bottom: 10px
+
+}
+/* .newsletter end */
+
+
+/* footer start  */
+.footer .box-container{
+    display: grid;
+   grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr)) ;
+    overflow: hidden;
+    gap:1.5rem ;
+    padding: 0  1.5rem ;
+    margin-top: 0px;
+
+}
+.footer  .box-container .box h3{
+  font-size: 1.2rem;
+  line-height: 50px;
+  color: var(--black);
+}
+.footer  .box-container .box .logo img{
+  width: 90px;
+  margin-top: 20px;
+}
+.footer  .box-container .box .social a{
+  width: 40px;
+  height: 40px;
+  background-color:cornflowerblue;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+  color: rgb(33, 33, 96);
+}
+.footer  .box-container .box .social a:hover{
+  padding: .3rem 0;
+  color: white;
+  background-color: rgb(33, 33, 96);
+
+}
+.footer .box-container .box .links i:hover{
+    padding-left:2rem;
+}
+.footer  .box-container .box .contact a{
+  font-size: .9rem;
+color: var(--black);
+line-height: 25px;
+}
+.footer  .box-container .box .contact span{
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 30px;
+}
+.footer  .box-container .box .links{
+  display: flex;
+  flex-direction: column;
+}
+.footer  .box-container .box .links a{
+color: var(--light-color);
+font-size: 1rem;
+line-height: 25px;
+margin-left: .4rem;
+}
+.footer  .box-container .box .visa img{
+width: 210px;
+}
+.footer-2 {
+  padding: .6rem .5rem;
+  font-size: 1rem;
+}
+
+/* .footer end  */
+
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+        <a href="shop.html">shop</a>
+        <a href="blog.html"  class="active">blog</a>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      </nav>
+
+      <div class="burger">
+        <div class="fa-solid fa-bars" id="menu-btn"></div>
+      </div>
+    </header>
+ 
+   
+  
+    <section id="blog-head">
+     
+        
+        <h1>#Read-More</h1>
+        
+        <p>Read all about our products and accessories!</p>
+     
+    </section><hr>
+   
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/blog img.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>The cotton Jeserry Zip-up</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>13/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/seasnal discount.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>How to-style a cuff</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>14/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/stock shirts.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>Must-have skater gril items</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>15/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/season.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>RunWay-inspired Trends</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>12/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/romnc cup.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>A20 MensWear-Trends</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>13/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/hnf shrts.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>The cotton Jeserry Zip-up hoddie</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>19/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/shirt.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>The cotton Jeserry Zip-up hoddie</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>18/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/couple.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>The cotton Jeserry Zip-up hoddie</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>15/01</h1>
+
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="cora imgs/cora meal.jpg" alt="">
+        </div>
+
+
+
+
+        <div class="blog-details">
+          <h4>The cotton Jeserry Zip-up hoddie</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel perspiciatis natus aspernatur expedita obcaecati molestias in, et saepe ipsa cum quae assumenda nesciunt velit earum ducimus hic consequuntur autem.</p>
+          <a href="">Continue reading</a>
+        </div>
+        <h1>13/01</h1>
+
+      </div>
+    </section>
+   <div class="pagination">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
+   </div>
+    <!-- newsletter strt  -->
+<div class="newsletter">
+  <div class="part-1">
+    <h2>sign up for newsletter</h2>
+    <p>get e-mail updates about our latest shop and <span>special offers!!</span></p>
+  </div>
+  <div class="part-2">
+    <input type="text" placeholder="your email adress">
+    <div class="sign-up">sign up</div>
+  </div>
+
+</div>
+    <!-- newsletter end -->
+<!-- footer  start  -->
+
+<div class="footer">
+  <div class="box-container">
+    <div class="box">
+      <div class="logo"><img src="cora imgs/cora logo2.png" alt=""></div>
+      <div class="contact">
+        <h3>contact</h3>
+      <span>adress:</span><a href="#">256 walbring road street 32</a><br>
+        <span>phone:</span><a href="#">+2056-777 & +92 302183265</a><br>
+        <span>hours</span><a href="#">10:00-18:00 mon-sat</a><br>
+        <h3>follow us</h3>
+      </div>
+      <div class="social">
+        <a href="#" class="fa-brands fa-facebook-f"></a>
+        <a href="#" class="fa-brands fa-twitter"></a>
+        <a href="#" class="fa-brands fa-instagram"></a>
+        <a href="#" class="fa-brands fa-linkedin"></a>
+    </div>
+
+    </div>
+    <div class="box">
+      <h3>about</h3>
+    
+     <div class="links">
+      <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#home">about us</a></i>
+      <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#features">delivery information</a></i>
+      <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#products">privacy policy</a></i>
+      <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#categories">terms and condition</a></i>
+      <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#reviews">contact us</a></i>
+      
+     </div>
+
+
+   </div>
+   <div class="box">
+    <h3>my account</h3>
+  
+   <div class="links">
+    <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#home">sign-in</a></i>
+    <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#features">view cart</a></i>
+    <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#products">my wallet</a></i>
+    <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#categories">track my order </a></i>
+    <i class="fa-sharp fa-solid fa-arrow-right"> <a href="#reviews">help</a></i>
+    
+   </div>
+
+
+ </div>
+
+<!-- app section  -->
+<div class="box">
+<h3>install app</h3>
+<p>from app store or google  play</p>
+<div class="google">
+  <img src="cora imgs/app store.png" alt="">
+  <img src="cora imgs/google play.png" alt=""  style="border: 1px solid rgb(127, 124, 124); border-radius: 7px;">
+</div>
+<p>secured payment gateways</p>
+<div class="visa">
+  <img src="cora imgs/visa.png" alt="">
+</div>
+</div>
+</div>
+
+<div class="footer-2">
+  <center><span>&copy; 2023 | all right reserved created by kiran riaz </span></center>
+</div>
+<!-- footer end  -->
+     
+   
+<script src="cora.js"></script>
+ </body>
+</html>

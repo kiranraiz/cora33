@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>corawebsite</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&family=Oxygen:wght@300&family=Poppins:wght@300;400&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+    
+
+      /* home page  slider  start  */
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 410px;
+        overflow: hidden;
+      }
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .slide:nth-child(1) {
+        background: rgba(0, 0, 0, 0.6) url("cora\ imgs/cora main hom.jpg")
+          no-repeat center center/cover;
+        background-blend-mode: darken;
+        background-size: 100% 100%;
+      }
+      .slide:nth-child(2) {
+        background: rgba(0, 0, 0, 0.5) url("cora imgs/cora\ home7.jpg") no-repeat
+          center center/cover;
+        background-blend-mode: darken;
+        background-size: 100% 100%;
+      }
+      .slide:nth-child(3) {
+        background: rgba(0, 0, 0, 0.6) url("cora imgs/shop lady2.jpg") no-repeat
+          center center/cover;
+        background-blend-mode: darken;
+        background-size: 100% 100%;
+      }
+      .slide:nth-child(4) {
+        background: rgba(0, 0, 0, 0.6) url("cora imgs/romnc cup.jpg")
+          no-repeat center center/cover;
+        background-blend-mode: darken;
+        background-size: 100% 100%;
+      }
+      /* home page  slider  end */
+
+      body {
+        background-color: white;
+        transition: all 0.4s linear;
+      }
+      /* root variables  */
+      :root {
+        --green: green;
+        --black: #130f40;
+        --light-color: #666;
+        --pink: antiquewhite;
+        --outline: 1px solid rgba(146, 135, 135, 0.5);
+        --border: 1px solid rgba(0, 0, 0, 0.5);
+        --box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.6);
+
+        --white: white;
+        --blue: rgb(19, 19, 97);
+      }
+      /* root variables  end */
+      /* utility classe start */
+      .btn {
+        background: #eee;
+        display: inline-block;
+        font-size: 1.1rem;
+        padding: 0.6rem 0.7rem;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(19, 19, 97);
+        cursor: pointer;
+      }
+      .btn:hover {
+        color: orange;
+        background-color: rgb(13, 13, 78);
+        transition: 0.2s linear;
+      }
+      .btn-2 {
+        color: var(--black);
+        background-color: white;
+        border: none;
+        padding: 0.7rem 0.6rem;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      section {
+        padding: 2rem 9%;
+      }
+
+      /* global varibs  */
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        text-transform: capitalize;
+        border: none;
+        transition: 0.2s linear;
+        outline: none;
+      }
+
+      body {
+        transition: all 0.4s linear;
+      }
+
+      /* 2nd header start */
+      .head-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.3rem 6rem;
+        background-color: rgb(76, 103, 22);
+
+        margin-top: 3.8rem;
+      }
+      .head-2 .logo img {
+        width: 60px;
+        border-radius: 100px;
+      }
+      .head-2 .order a {
+        color: var(--black);
+        font-size: 1rem;
+      }
+      .head-2 .btn:hover {
+        background-color: rgb(13, 13, 78);
+        transition: 0.2s linear;
+        color: orange;
+      }
+      /* 2nd header  end*/
+      /* 3rd header  start*/
+
+      .head-3 {
+        padding: 0.2rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+      }
+      .head-3 a {
+        color: var(--black);
+        font-size: 1rem;
+      }
+      .head-3 .fa-solid {
+        color: var(--green);
+        font-size: 1.3rem;
+      }
+
+      /* 3rd header end*/
+
+      /* header start  */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 8%;
+        z-index: 1000;
+    background-color: antiquewhite;
+    box-shadow: var(--box-shadow);
+
+      }
+      .header .navbar {
+        display: flex;
+        padding: 0.6rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .header .navbar a {
+        margin: 0 2.9rem;
+        color: var(--black);
+        font-size: 1rem;
+      }
+      .header .navbar a:hover {
+        color: rgb(76, 103, 22);
+        transition: 0.2s linear;
+      }
+      .header .burger {
+        display: none;
+      }
+      .navbar a:hover,
+      .navbar a.active {
+        color: green;
+      }
+      .navbar a {
+        position: relative;
+      }
+      .navbar a.active::after,
+      .navbar a:hover::after {
+        content: "";
+        width: 60%;
+        height: 2px;
+        bottom: -4px;
+        left: 10px;
+        position: absolute;
+        background-color: green;
+      }
+      /* header end */
+
+      /* main start  */
+      .slider .slide .main {
+        max-width: 70%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .slider .slide .main h3 {
+        font-size: 18px;
+
+        line-height: 45px;
+        color: rgb(226, 218, 218);
+      }
+      .slider .slide .main h2 {
+        font-size: 31px;
+
+        line-height: 38px;
+        color: black;
+        font-weight: 600;
+      }
+      .slider .slide .main h1 {
+        font-size: 45px;
+        line-height: 49px;
+        color: cornflowerblue;
+
+        font-weight: 700;
+      }
+      .slider .slide .main p {
+        font-size: 17px;
+
+        line-height: 45px;
+        color: rgb(229, 223, 223);
+        font-weight: 500;
+      }
+
+      /* main end  */
+
+      /* features  start */
+      .features {
+        padding: 2rem 9%;
+      }
+      .features .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        gap: 1.5rem;
+      }
+      .features .box-container .box {
+        text-align: center;
+
+        outline-offset: -0.4rem;
+        padding: 1rem 2rem;
+        outline: var(--outline);
+        box-shadow: var(--box-shadow);
+        background-color: white;
+      }
+      .features .box-container .box img {
+        height: 4.5rem;
+      }
+      .features .box-container .box h6 {
+        font-size: 0.8rem;
+        color: var(--black);
+      }
+      .features .box-container .box .fe-butoon {
+        background-color: aquamarine;
+        padding: 0.5rem 0.5rem;
+        margin-top: 1rem;
+        border-radius: 2px;
+      }
+      .features .box-container .box:nth-child(3) h6 {
+        background-color: aquamarine;
+      }
+      .features .box-container .box:nth-child(2) h6 {
+        background-color: yellowgreen;
+      }
+      .features .box-container .box:nth-child(4) h6 {
+        background-color: rgb(202, 169, 234);
+      }
+      .features .box-container .box:nth-child(5) h6 {
+        background-color: pink;
+      }
+      .features .box-container .box:nth-child(6) h6 {
+        background-color: crimson;
+      }
+      .features .box-container .box:nth-child(1) h6 {
+        background-color: coral;
+      }
+      .features .box-container .box:hover {
+        box-shadow: 1px 1px 10px 4px rgb(78, 76, 76);
+      }
+      /* features  end */
+      /* featured prod   start*/
+      .heading span {
+        background-color: cornflowerblue;
+        color: white;
+        padding: 0.3rem 1rem;
+        display: inline-block;
+        clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+      }
+      .fe-products .heading {
+        font-size: 2rem;
+      }
+      .fe-products p {
+        color: rgb(86, 82, 82);
+        line-height: 30px;
+        font-size: 0.8rem;
+      }
+      .fe-products .box-container-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12.9rem, 1fr));
+        gap: 1.7rem;
+        margin-top: 30px;
+      }
+      .fe-products .box-container-2 .box {
+        text-align: center;
+        position: relative;
+        outline-offset: -0.4rem;
+        padding: 1rem 0;
+        outline: var(--outline);
+        box-shadow: var(--box-shadow);
+        background-color: white;
+        border-radius: 12px;
+      }
+      .fe-products .box-container-2 .box img {
+        width: 10rem;
+        border-radius: 10px;
+      }
+      .fe-products .box-container-2 .box .h {
+        width: 60%;
+
+        background-color: white;
+
+        height: 7px;
+      }
+      .fe-products .box-container-2 .box h6 {
+        font-size: 0.8rem;
+        color: var(--black);
+      }
+      .fe-products .box-container-2 .box:hover {
+        box-shadow: 1px 1px 10px 4px rgb(78, 76, 76);
+      }
+      .fe-products .box-container-2 .box .des {
+        text-align: start;
+        padding: 0.7rem 1.5rem;
+      }
+      .fe-products .box-container-2 .box .des span {
+        color: rgb(160, 155, 155);
+        line-height: 30px;
+      }
+      .fe-products .box-container-2 .box .des p {
+        font-size: 1rem;
+        color: var(--black);
+      }
+      .fe-products .box-container-2 .box .des .stars i {
+        color: orange;
+      }
+      .fe-products .box-container-2 .box .des .price h6 {
+        color: var(--black);
+        font-size: 1.2rem;
+        line-height: 25px;
+      }
+      .fe-products .box-container-2 .box .des .cart {
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        border: 1px solid rgb(242, 238, 238);
+        line-height: 40px;
+        background-color: rgb(242, 226, 229);
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+      }
+      .fe-products .box-container-2 .box .des .cart a {
+        color: green;
+      }
+      .fe-products .box-container-2 .box .des .cart:hover {
+        background-color: rgb(228, 175, 193);
+      }
+      /* featured prod end*/
+      /* call to action start  */
+      .call-to-action {
+        background: rgba(0, 0, 0, 0.3) url("cora\ imgs/bg.jpg") no-repeat center
+          center/cover;
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-blend-mode: darken;
+        padding: 0.5rem;
+      }
+      .call-to-action h6 {
+        font-size: 1.2rem;
+        color: white;
+        line-height: 50px;
+      }
+      .call-to-action h2 {
+        font-size: 2rem;
+        color: white;
+        line-height: 40px;
+      }
+      .call-to-action h2 span {
+        color: orangered;
+      }
+      .call-to-action .btn-2 {
+        color: var(--black);
+        background-color: white;
+        border: none;
+        padding: 0.6rem 0.5rem;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .call-to-action .btn-2:hover {
+        background-color: orangered;
+        color: white;
+        transition: 0.2s linear;
+      }
+
+      /* call to action end */
+      /* banner start  */
+      .banner-1 .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12.9rem, 1fr));
+        gap: 1.7rem;
+      }
+      .banner-1 .box-container .box-1 {
+        text-align: center;
+        position: relative;
+        background-blend-mode: darken;
+        padding: 1rem 0;
+        height: 40vh;
+        background-blend-mode: darken;
+        background: rgba(0, 0, 0, 0.3) url("cora imgs/y\ cary.jpg");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .banner-1 .box-container .box-2 {
+        text-align: center;
+        position: relative;
+        height: 40vh;
+        background-blend-mode: darken;
+        background: rgba(0, 0, 0, 0.3) url("cora\ imgs/shirt.jpg");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .banner-1 .box-container .box-2 span,
+      .box-1 span {
+        color: #eee;
+        font-size: 1.2rem;
+        line-height: 60px;
+      }
+      .banner-1 .box-container .box-2 h2,
+      .box-1 h2 {
+        color: #eee;
+        font-size: 2rem;
+        line-height: 40px;
+      }
+      .banner-1 .box-container .box-2 p,
+      .box-1 p {
+        color: #dad8d8;
+        font-size: 1rem;
+        line-height: 30px;
+      }
+      .banner-1 .box-container .box-1 .btn-2 {
+        color: white;
+        background-color: rgb(42, 96, 42);
+      }
+      .banner-1 .box-container .box-2 .btn-2 {
+        color: white;
+        background-color: rgb(42, 96, 42);
+      }
+      .banner-1 .box-container .box-1 .btn-2:hover {
+        background-color: rgb(18, 79, 18);
+      }
+      .banner-1 .box-container .box-2 .btn-2:hover {
+        background-color: rgb(18, 79, 18);
+      }
+
+      .banner-1 {
+        padding: 2rem 9%;
+      }
+      /* banner end  */
+      /* 2nd banner start  */
+      .banner-2 {
+        padding: 1.5rem 9%;
+      }
+      .banner-2 .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12.9rem, 1fr));
+        gap: 1.5rem;
+      }
+      .banner-2 .box-container .box-3 {
+        background-blend-mode: darken;
+        padding: 1rem 0;
+        height: 30vh;
+        background-blend-mode: darken;
+        background: rgba(0, 0, 0, 0.3) url("cora\ imgs/seasn.jpg") no-repeat
+          center;
+        display: flex;
+        padding-left: 1rem;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .banner-2 .box-container .box-4 {
+        height: 30vh;
+        background-blend-mode: darken;
+        background: rgba(0, 0, 0, 0.3) url("cora\ imgs/cuple.jpg");
+        display: flex;
+        padding-left: 1rem;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .banner-2 .box-container .box-5 {
+        position: relative;
+        height: 30vh;
+        background-blend-mode: darken;
+        background-size: cover;
+        background: rgba(0, 0, 0, 0.2) url("cora\ imgs/double grls.jpg")
+          no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        padding-left: 1rem;
+        align-items: start;
+      }
+
+      .banner-2 .box-container .box-3 h2,
+      .box-4 h2,
+      .box-5 h2 {
+        color: #eee;
+        font-size: 1.6rem;
+        line-height: 40px;
+      }
+      .banner-2 .box-container .box-5 h2 {
+        color: rgb(57, 100, 179);
+      }
+      .banner-2 .box-container .box-3 p,
+      .box-4 p {
+        color: #972121;
+        font-size: 1rem;
+        line-height: 30px;
+        font-weight: 500;
+      }
+      .box-5 p {
+        color: #972121;
+        font-size: 1rem;
+        line-height: 30px;
+        font-weight: 500;
+      }
+      /* 2nd banner end */
+      /* .newsletter start  */
+      .newsletter {
+        background-color: rgb(33, 33, 96);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .newsletter .part-1 h2 {
+        color: white;
+        font-size: 1.9rem;
+        line-height: 45px;
+      }
+      .newsletter .part-1 p {
+        color: rgb(214, 207, 207);
+        font-size: 0.9rem;
+        line-height: 30px;
+      }
+      .newsletter .part-1 span {
+        color: orange;
+      }
+      .newsletter .part-1,
+      .part-2 {
+        padding: 2rem 9%;
+      }
+      .newsletter .part-2 input {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        outline: none;
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .newsletter .part-2 {
+        display: flex;
+        width: 45%;
+      }
+      .newsletter .part-2 .sign-up {
+        padding: 0.7rem;
+        background-color: rgb(13, 68, 13);
+
+        color: white;
+        white-space: nowrap;
+        border-radius: 4px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      /* .newsletter end  */
+
+      /* footer start  */
+      .footer .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        overflow: hidden;
+        gap: 0.1rem;
+        padding: 2rem 1rem;
+      }
+      .footer .box-container .box {
+        justify-content: center;
+        align-items: start;
+        padding: 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .footer .box-container .box h3 {
+        font-size: 1.3rem;
+        line-height: 70px;
+        color: var(--black);
+      }
+      .footer .box-container .box .logo img {
+        width: 90px;
+      }
+      .footer .box-container .box .social a {
+        width: 40px;
+        height: 40px;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        color: rgb(33, 33, 96);
+      }
+      .footer .box-container .box .social a:hover {
+        padding: 0.3rem 0;
+        color: white;
+        background-color: rgb(33, 33, 96);
+      }
+      .footer .box-container .box .links i:hover {
+        padding-left: 2rem;
+      }
+      .footer .box-container .box .contact a {
+        font-size: 0.9rem;
+        color: var(--black);
+        line-height: 25px;
+      }
+      .footer .box-container .box .contact span {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 25px;
+      }
+      .footer .box-container .box .links {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer .box-container .box .links a {
+        color: var(--light-color);
+        font-size: 1rem;
+        line-height: 25px;
+        margin-left: 0.4rem;
+      }
+      .footer .box-container .box .links i {
+        color: cornflowerblue;
+      }
+      .footer .box-container .box .google {
+        display: flex;
+      }
+      .footer .box-container .box .google img {
+        width: 100px;
+        border-radius: 6px;
+        margin: 5px;
+      }
+      .footer .box-container .box .google {
+        display: flex;
+      }
+      .footer .box-container .box .visa img {
+        width: 210px;
+        margin-top: 20px;
+      }
+      .footer .box-container .box h6 {
+        font-size: 1rem;
+        color: var(--light-color);
+        line-height: 45px;
+      }
+      .footer {
+        background-color: #eee;
+      }
+      .footer-2 {
+        padding: 1rem;
+        color: var(--light-color);
+      }
+      /* footer end */
+      /* 1st media querry start  */
+
+      @media (max-width: 375px) {
+        /* 2nd header start */
+        .head-2 {
+          padding: 0.3rem 2.7rem;
+          margin-top: 3.2rem;
+        }
+        .head-2 .logo img {
+          width: 50px;
+          border-radius: 100px;
+        }
+        .head-2 .order a {
+          color: var(--black);
+          font-size: 0.9rem;
+        }
+
+        /* 2nd header  end*/
+        /* 3rd header  start*/
+
+        .head-3 {
+          padding: 0.5rem 1.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: white;
+        }
+        .head-3 a {
+          color: var(--black);
+          font-size: 0.8rem;
+        }
+        .head-3 .fa-solid {
+          color: var(--green);
+          font-size: 1.3rem;
+        }
+
+        /* 3rd header end*/
+        /* header start*/
+        .header .burger {
+          display: inline-block;
+          margin-left: 280px;
+          font-size: 1.2rem;
+        }
+        .header .navbar {
+          position: absolute;
+          top: 110%;
+          width: 17rem;
+          right: -110%;
+          padding: 1rem 0.5rem;
+          background-color: white;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+        }
+        .header .navbar.active {
+          right: 0.1rem;
+          transition: 0.2s linear;
+        }
+        .header .navbar a {
+          margin: 12px;
+          font-size: 1.4rem;
+          color: var(--black);
+        }
+
+        /* header end  */
+
+        /* main start  */
+        .slider .slide .main {
+          max-width: 90%;
+          height: 100%;
+        }
+        .slider .slide .main h3 {
+          font-size: 18px;
+
+          line-height: 35px;
+          color: rgb(226, 218, 218);
+        }
+        .slider .slide .main h2 {
+          font-size: 25px;
+
+          line-height: 30px;
+          color: black;
+          font-weight: 600;
+        }
+        .slider .slide .main h1 {
+          font-size: 36px;
+
+          line-height: 42px;
+          color: cornflowerblue;
+          font-weight: 700;
+        }
+        .slider .slide .main p {
+          font-size: 16px;
+          line-height: 30px;
+          color: rgb(229, 223, 223);
+          font-weight: 400;
+        }
+
+        /* main end  */
+        /* features start  */
+        .features .box-container .box .fe-butoon {
+          background-color: aquamarine;
+          padding: 0.5rem 0.2rem;
+          margin-top: 1rem;
+          border-radius: 2px;
+        }
+        .features .box-container .box h6 {
+          font-size: 0.7rem;
+          color: var(--black);
+        }
+        .features {
+          padding: 2rem 1.3rem;
+        }
+        /* features end*/
+        .fe-products .heading {
+          font-size: 1.4rem;
+        }
+        /* call to action start  */
+        .call-to-action {
+          width: 100%;
+          height: 25vh;
+        }
+        .call-to-action h6 {
+          font-size: 0.8rem;
+          color: white;
+          line-height: 50px;
+        }
+        .call-to-action h2 {
+          font-size: 1.1rem;
+          color: white;
+          line-height: 20px;
+        }
+        .call-to-action h2 span {
+          color: orangered;
+        }
+        /* call to action end  */
+        /* banner start  */
+
+        .banner-1 .box-container .box-2 span,
+        .box-1 span {
+          color: #eee;
+          font-size: 1.2rem;
+          line-height: 60px;
+        }
+        .banner-1 .box-container .box-2 h2 {
+          color: #ba2525;
+          font-size: 0.7rem;
+          line-height: 45px;
+        }
+        .banner-1 .box-container .box-2 p,
+        .box-1 p {
+          color: #dad8d8;
+          font-size: 1rem;
+          line-height: 10;
+        }
+        .banner-1 .box-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(12.9rem, 1fr));
+          gap: 1.7rem;
+        }
+        .banner-1 .box-container .box-1 {
+          height: 30vh;
+        }
+        .banner-1 .box-container .box-2 {
+          height: 30vh;
+        }
+        section {
+          padding: 2rem 14%;
+        }
+        .banner-1 {
+          padding: 0;
+        }
+        .banner-1 .box-container .box-2 span,
+        .box-1 span {
+          color: #eee;
+          font-size: 1.2rem;
+          line-height: 40px;
+        }
+        .banner-1 .box-container .box-2 h2,
+        .box-1 h2 {
+          color: #eee;
+          font-size: 1.9rem;
+          line-height: 40px;
+        }
+        .banner-1 .box-container .box-2 p,
+        .box-1 p {
+          color: #dad8d8;
+          font-size: 1rem;
+          line-height: 20px;
+        }
+
+        /* banner end*/
+
+        /* .banner-2 start  */
+        .banner-2 {
+          padding: 2rem 10%;
+        }
+        .banner-2 .box-container .box-4 h2 {
+          font-size: 1.4rem;
+        }
+
+        /* .banner-2 end  */
+
+        /* .newsletter start  */
+        .newsletter {
+          background-color: rgb(33, 33, 96);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+        .newsletter .part-1 h2 {
+          color: white;
+          font-size: 1.5rem;
+          line-height: 45px;
+        }
+        .newsletter .part-1 p {
+          color: rgb(214, 207, 207);
+          font-size: 0.7rem;
+          line-height: 20px;
+        }
+        .newsletter .part-1,
+        .part-2 {
+          padding: 0.7rem 1rem;
+        }
+        .newsletter .part-2 input {
+          padding: 0.7rem;
+          font-size: 0.9rem;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          outline: none;
+          width: 100%;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        .newsletter .part-2 {
+          display: flex;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        /* .newsletter end */
+
+        /* footer start  */
+        .footer .box-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+          overflow: hidden;
+          gap: 1.5rem;
+          padding: 0 1.5rem;
+        }
+        .footer .box-container .box h3 {
+          font-size: 1.2rem;
+          line-height: 50px;
+          color: var(--black);
+        }
+        .footer .box-container .box .logo img {
+          width: 90px;
+          margin-top: 20px;
+        }
+        .footer .box-container .box .social a {
+          width: 40px;
+          height: 40px;
+          background-color: cornflowerblue;
+          border-radius: 5px;
+          line-height: 40px;
+          text-align: center;
+          color: rgb(33, 33, 96);
+        }
+        .footer .box-container .box .social a:hover {
+          padding: 0.3rem 0;
+          color: white;
+          background-color: rgb(33, 33, 96);
+        }
+        .footer .box-container .box .links i:hover {
+          padding-left: 2rem;
+        }
+        .footer .box-container .box .contact a {
+          font-size: 0.9rem;
+          color: var(--black);
+          line-height: 25px;
+        }
+        .footer .box-container .box .contact span {
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 30px;
+        }
+        .footer .box-container .box .links {
+          display: flex;
+          flex-direction: column;
+        }
+        .footer .box-container .box .links a {
+          color: var(--light-color);
+          font-size: 1rem;
+          line-height: 25px;
+          margin-left: 0.4rem;
+        }
+        .footer .box-container .box .visa img {
+          width: 210px;
+          margin-top: 0px;
+        }
+        .footer-2 {
+          padding: 1rem;
+        }
+        /* .footer end  */
+      }
+
+      /* 1st media querry end */
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#home" class="active">home</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+        <a href="shop.html">shop</a>
+        <a href="blog.html">blog</a>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      </nav>
+
+      <div class="burger">
+        <div class="fa-solid fa-bars" id="menu-btn"></div>
+      </div>
+    </header>
+    <div class="head-2">
+      <div class="logo"><img src="cora imgs/cora logo2.png" alt="" /></div>
+      <div class="order">
+        <a href="#"
+          ><i class="fa-brands fa-whatsapp" id=" whts"></i> 03021832</a
+        >
+        <div class="btn">order now</div>
+      </div>
+    </div>
+    <div class="head-3">
+      <a href="#">contact us know</a>
+      <a href="#"
+        ><i class="fa-solid fa-envelope"></i> kiranraiz2002@gmail.com</a
+      >
+    </div>
+
+    <!-- /* home page  slider start */ -->
+
+    <div class="slider">
+      <div class="slide">
+        <div class="main">
+          <h3>trade-in-offer</h3>
+          <h2>super value deals</h2>
+          <h1>on all Products</h1>
+          <p>save more with coupins & upto 70% off!</p>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="main">
+          <h3>trade-in-offer</h3>
+          <h2>super value deals</h2>
+          <h1>on all Products</h1>
+          <p>save more with coupins & upto 70% off!</p>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="main">
+          <h3>trade-in-offer</h3>
+          <h2>super value deals</h2>
+          <h1>on all Products</h1>
+          <p>save more with coupins & upto 70% off!</p>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="main">
+          <h3>trade-in-offer</h3>
+          <h2>super value deals</h2>
+          <h1>on all Products</h1>
+          <p>save more with coupins & upto 70% off!</p>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- /* home page  slider end -->
+    <!-- features start  -->
+    <div class="features" id="features">
+      <div class="box-container">
+        <div class="box">
+          <img src="cora imgs/24 img.jpg" alt="" style="width: 100px" />
+          <h6 class="fe-butoon">free shiping</h6>
+        </div>
+        <div class="box">
+          <img src="cora imgs/save mon.jpg" alt="" />
+          <h6 class="fe-butoon">save money</h6>
+        </div>
+        <div class="box">
+          <img src="cora imgs/happy sell.jpg" alt="" />
+          <h6 class="fe-butoon">happy sell</h6>
+        </div>
+        <div class="box">
+          <img src="cora imgs/online 1.jpg" alt="" />
+          <h6 class="fe-butoon">online order</h6>
+        </div>
+        <div class="box">
+          <img src="cora imgs/premium.jpg" alt="" />
+          <h6 class="fe-butoon">premium</h6>
+        </div>
+        <div class="box">
+          <img src="cora imgs/24  sup.jpg" alt="" style="width: 100px" />
+          <h6 class="fe-butoon">24/7suport</h6>
+        </div>
+      </div>
+    </div>
+    <!-- features end  -->
+
+    <!-- fe-products start  -->
+    <section class="fe-products" id="featured">
+      <center>
+        <h1 class="heading">featured <span>Products</span></h1>
+      </center>
+      <center>
+        <p>summer collection new modern design</p>
+      </center>
+      <div class="box-container-2">
+        <div class="box">
+          <img src="cora imgs/n2.jpg" alt="" />
+          <hr class="h" />
+          <div class="des">
+            <hr />
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n6.jpg" alt="" />
+
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n3.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n2.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n3.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n6.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n2.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n3.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n6.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n2.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n3.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n6.jpg" alt="" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- fe-products end  -->
+    <!-- call to  action start  -->
+    <div class="call-to-action">
+      <!-- <img src="cora imgs/bg.jpg" alt=""> -->
+      <h6>repair services</h6>
+      <h2>up to <span>70% off</span>-all t-shirts & accessories</h2>
+      <div class="btn-2">explore more</div>
+    </div>
+
+    <!-- call to  action end  -->
+
+    <!-- new arrivals  start  -->
+    <section class="fe-products" id="featured">
+      <center>
+        <h1 class="heading">new<span>arrivals</span></h1>
+      </center>
+      <center>
+        <p>summer collection new modern design</p>
+      </center>
+      <div class="box-container-2">
+        <div class="box">
+          <img src="cora imgs/cora blog.jpg" alt="" style="width: 140px" />
+          <div class="des">
+            <hr />
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/troser.jpg" alt="" />
+
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="cora imgs/hang shrts.jpg"
+            alt=""
+            style="width: 175px; background-color: whitesmoke"
+          />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/grn shrt.jpg" alt="" style="width: 110px" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/n1.jpg" alt="" style="width: 120px" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/carry bag.jpg" alt="" style="width: 200px" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/pair shrt.jpg" alt="" style="width: 225px" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img src="cora imgs/pent.jpg" alt="" style="width: 100px" />
+          <div class="des">
+            <span>addidas</span>
+            <p>corton astronout t-shirts</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price">
+              <h6>$78</h6>
+            </div>
+            <div class="cart">
+              <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- new arrivals end  -->
+    <!-- banner start  -->
+    <div class="banner-1">
+      <div class="box-container">
+        <div class="box-1">
+          <span>crazy deals</span>
+          <h2>buy 1 get 1 free</h2>
+          <p>the best classic dress is on sale at cora</p>
+          <div class="btn-2">learn more</div>
+        </div>
+        <div class="box-2">
+          <span>spring/summer</span>
+          <h2>upcomming season</h2>
+          <p>the best classic dress is on sale at cora</p>
+          <div class="btn-2">collection</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-2">
+      <div class="box-container">
+        <div class="box-3">
+          <h2>seasonal sale</h2>
+          <p>winter and summer collection</p>
+        </div>
+        <div class="box-4">
+          <h2>new footware collection</h2>
+          <p>summer collection sale 2023</p>
+        </div>
+        <div class="box-5">
+         
+        </div>
+      </div>
+    </div>
+
+    <!-- banner end -->
+    <!-- newsletter strt  -->
+    <div class="newsletter">
+      <div class="part-1">
+        <h2>sign up for newsletter</h2>
+        <p>
+          get e-mail updates about our latest shop and
+          <span>special offers!!</span>
+        </p>
+      </div>
+      <div class="part-2">
+        <input type="text" placeholder="your email adress" />
+        <div class="sign-up">sign up</div>
+      </div>
+    </div>
+    <!-- newsletter end -->
+    <!-- footer  start  -->
+    <div class="footer">
+      <div class="box-container">
+        <div class="box">
+          <div class="logo"><img src="cora imgs/cora logo2.png" alt="" /></div>
+          <div class="contact">
+            <h3>contact</h3>
+            <span>adress:</span><a href="#">256 walbring road street 32</a
+            ><br />
+            <span>phone:</span><a href="#">+2056-777 & +92 302183265</a><br />
+            <span>hours</span><a href="#">10:00-18:00 mon-sat</a><br />
+            <h3>follow us</h3>
+          </div>
+          <div class="social">
+            <a href="#" class="fa-brands fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-twitter"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-linkedin"></a>
+          </div>
+        </div>
+        <div class="box">
+          <h3>about</h3>
+
+          <div class="links">
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#home">about us</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#features">delivery information</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#products">privacy policy</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#categories">terms and condition</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#reviews">contact us</a></i
+            >
+          </div>
+        </div>
+        <div class="box">
+          <h3>my account</h3>
+
+          <div class="links">
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#home">sign-in</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#features">view cart</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#products">my wallet</a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#categories">track my order </a></i
+            >
+            <i class="fa-sharp fa-solid fa-arrow-right">
+              <a href="#reviews">help</a></i
+            >
+          </div>
+        </div>
+        <div class="box">
+          <h3>install app</h3>
+          <h6>from app store or google play</h6>
+          <div class="google">
+            <div class="app">
+              <img
+                src="cora imgs/app store.png"
+                alt=""
+                style="height: 49px; width: 110px"
+              />
+            </div>
+            <div class="go-play">
+              <img
+                src="cora imgs/google play.png"
+                alt=""
+                style="border: 1px solid var(--light-color); height: 50px"
+              />
+            </div>
+          </div>
+          <h6>secured payments gateways</h6>
+          <div class="visa">
+            <img src="cora imgs/visa.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-2">
+      <center>
+        <span>&copy; 2023 | all right reserved created by kiran riaz </span>
+      </center>
+    </div>
+
+
+    <!-- footer end  -->
+
+    <!-- javascript start -->
+    <script src="cora.js"></script>
+    <!-- javascript end -->
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const slideDelay = 7000; // Delay between slide transitions in milliseconds
+      let currentSlide = 0;
+
+      function showSlide() {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove("active");
+        // Calculate the index of the next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        // Add active class to next slide
+        slides[currentSlide].classList.add("active");
+      }
+
+      // Show the first slide
+      slides[currentSlide].classList.add("active");
+
+      // Start the slideshow
+      setInterval(showSlide, slideDelay);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&family=Oxygen:wght@300&family=Poppins:wght@300;400&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
+/* root variables  */
+:root {
+        --green: green;
+        --black: #130f40;
+        --light-color: #666;
+        --pink: antiquewhite;
+        --outline: 1px solid rgba(146, 135, 135, 0.5);
+        --border: 1px solid rgba(0, 0, 0, 0.5);
+        --box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.6);
+        --white: white;
+        --blue: rgb(19, 19, 97);
+      } 
+      /* root variables  end */
+      * {
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        text-decoration: none;
+        list-style: none;
+        font-family: "Poppins", sans-serif;
+
+      }
+      body {
+        width: 100%;
+        transition: all 0.4s linear;
+
+      }
+    
+       /* header start  */
+       .header {
+        position: fixed;
+    background-color: antiquewhite;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 8%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+      }
+      .header .navbar {
+        display: flex;
+        padding: 0.6rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .header .navbar a {
+        margin: 0 2.9rem;
+        color: var(--black);
+        font-size: 1rem;
+      }
+      .header .navbar a:hover {
+        color: rgb(76, 103, 22);
+        transition: 0.2s linear;
+      }
+      .header .burger {
+        display: none;
+      }
+      .navbar a:hover,
+      .navbar a.active {
+        color: green;
+      }
+      .navbar a {
+        position: relative;
+      }
+      .navbar a.active::after,
+      .navbar a:hover::after {
+        content: "";
+        width: 60%;
+        height: 2px;
+        bottom: -4px;
+        left: 10px;
+        position: absolute;
+        background-color: green;
+      }
+      /* header end */
+     
+     
+      /* utility classes */
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+
+      }
+      h1 {
+        font-weight: 700;
+        line-height: 50px;
+        font-size: 45px;
+        color: green;
+      }
+      p {
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 25px;
+
+      }
+      .opacity {
+        opacity: 0.5;
+      }
+      .btn{
+        width: 100px;
+        height: 30px;
+        padding:0px 10px;
+        font-weight: 700;
+        font-size: 15px;
+        border: 2px solid rgb(173, 164, 164);
+        border-radius: 5px;
+        cursor: pointer;
+        line-height:30px;
+        background-color: aliceblue;
+       margin: 5px 0px;
+      }
+      .normal{
+        padding:0px 2px;
+        font-weight: 700;
+        font-size: 15px;
+        border: 2px solid rgb(173, 164, 164);
+        border-radius: 3px;
+        cursor: pointer;
+        line-height:30px;
+        background-color: white;
+       margin: 5px 0px;
+      }
+      .section-p1{
+        padding: 40px 100px;
+      }
+      h6{
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 30px;
+        margin-top: 10px;
+        border-radius: 2px;
+      }
+      h5{
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 20px;
+        margin-top: 2px;
+        border-radius: 2px;
+      }
+    /* utility classes end */
+      
+    
+      
+
+    
+
+  
+    
+    
+      #feature-products{
+        text-align: center;
+        margin: 10px 10px;
+       
+    
+      }
+     
+      #feature-products .img-pro{
+        width: 170px;
+        height: 240px;
+         /* min-width: 50px;  */
+        padding: 8px 10px;
+        border: 1px solid rgb(155, 142, 142);
+        border-radius: 10px;
+box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.2);
+position: relative;
+transition: 0.1s ease;
+text-align: center;
+      
+        
+      }
+      #feature-products .img-pro:hover{
+
+        box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.5);
+      }
+      #feature-products .section-p1{
+        padding: 0px 100px;
+      }
+      .img-pro img{
+width: 50%;
+      }
+
+
+      #feature-products .fe-box2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 15px;
+       
+  }
+  
+       .fe-box2 .des{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+       }
+       .fe-box2 .des h4{
+        font-weight: 700;
+        font-size: 18px;
+        color: rgb(4, 62, 4);
+        margin-top: 7px;
+
+       }
+       .star i{
+        color: rgb(243, 181, 25);
+
+
+       }
+       .img-pro .kiran{
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        line-height: 30px;
+        color: rgb(26, 106, 26);
+        background-color: rgb(220, 235, 220);
+        text-align: center;
+       right: 10px ;
+       bottom: 10px;
+       border: 1px solid rgb(233, 222, 222);
+       position: absolute;
+       }
+       .img-pro .kiran:hover{
+        background-color: rgb(231, 144, 174);
+
+       }
+       .img-pro hr{
+        opacity: 0.5;
+       }
+     
+       .fe-box2 .img-pro{
+        margin: 20px 15px;
+       }
+       .fe-box2 {
+        margin-top: 50px;
+       }
+       #call-to-action .call{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.4) url("cora\ imgs/bg.jpg") no-repeat center center/cover;
+        background-blend-mode: darken;
+        height: 30vh;
+        color: white;
+
+
+      } 
+      #call-to-action .call h5{
+        line-height: 50px;
+      }
+      #call-to-action .call h5{
+        line-height: 50px;
+        
+      }
+      #call-to-action .call span{
+        color: red;
+        
+      }
+      #call-to-action .call button{
+     margin-top: 20px;
+     border: none;
+      }
+      #call-to-action .call button:hover{
+    background-color: rgb(38, 96, 38);
+      }
+      #feature-products h1{
+        color: black;
+      }
+      #banner .ban-1, .ban-2{
+width: 35%;
+background-color: rgb(218, 91, 45);
+margin: 10px 10px;
+display: flex;
+flex-direction: column;
+text-align: start;
+padding: 50px 40px ;
+color: white;
+background-color: rgb(250, 250, 22);
+
+      }
+      #banner .ban-1{
+        background: rgb(242, 89, 33) url("cora\ imgs/yello cary grl.jpg");
+        background-blend-mode: multiply;
+      }
+      #banner .ban-2{
+        background: rgba(0, 0, 0, 0.5) url("cora\ imgs/differ color p stock.jpg");
+        background-blend-mode: darken;
+      }
+       .ban-2 button{ 
+width: 90px;
+color: white;
+border-radius: 5px;
+background-color: rgb(21, 83, 21);
+border: 1px solid rgb(60, 55, 55);
+cursor: pointer;
+margin-top: 10px;
+      }
+     .ban-2 button:hover{
+        background-color: rgb(29, 62, 29);
+      }
+      .ban-1   button:hover{
+background-color: rgb(21, 83, 21);
+       
+      }
+      .ban-1  button {
+margin-top: 10px;
+
+        width: 100px;
+        color: white;
+border-radius: 5px;
+background-color:transparent;
+border: 1px solid rgb(251, 249, 249);
+cursor: pointer;
+      }
+      #banner{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+#text-ban .text-ban1, .text-ban2 , .text-ban3{
+  width: 26%;
+  background-color: goldenrod;
+  padding: 50px 10px;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+margin: 10px 8px;
+color: white;
+}
+#text-ban p{
+  color: red;
+  opacity: 0.8;
+}
+#text-ban {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin-top: 20px;
+}
+#text-ban .text-ban1{
+  background: rgba(0, 0, 0, 0.5) url("cora\ imgs/seasnal discount.jpg")no-repeat center center/cover;
+  background-blend-mode: darken;
+
+}
+
+
+
+.n-button{
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 0px 8px;
+        border: 1px solid transparent;
+        outline: none;
+ border-radius: 4px;
+ font-size: 14px;
+
+
+}
+
+
+
+
+
+#cart-head{
+   background: rgba(0, 0, 0, 0.5) url("cora\ imgs/shop mall4.jpg");
+   background-size:100% 100%;
+   background-repeat: no-repeat;
+   height: 45vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    flex-direction: column;
+    color:rgb(226, 218, 218);
+    background-blend-mode: darken;
+}
+#cart-head p{
+  font-size: 14px;
+}
+
+
+/* cart styling */
+#cart-table table{
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  table-layout: fixed;
+}
+#cart-table table img{
+  width: 50px;
+}
+#cart-table table td:nth-child(1),
+#cart-table table td:nth-child(2){
+  width: 100px;
+  text-align: center;
+}
+#cart-table table td:nth-child(3)
+
+
+{
+  width: 230px;
+  text-align: center;
+}
+#cart-table table td:nth-child(4)
+
+{
+  width: 150px;
+  text-align: center;
+}
+#cart-table table td:nth-child(5) input{
+  width: 50px;
+  padding: 2px;
+  
+}
+
+#cart-table table td:nth-child(5)
+
+{
+  width: 130px;
+  text-align: center;
+}
+#cart-table table td:nth-child(6)
+
+{
+  width: 150px;
+  text-align: center;
+}
+#cart-table thead{
+  border: 1px solid rgb(205, 194, 194);
+ border-left: none;
+ border-right: none;
+
+}
+#cart-table thead td{
+font-weight: 800;
+font-size: 15px;
+text-transform: uppercase;
+padding: 10px 0px;
+ 
+}
+
+#cart-table tbody tr td{
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+
+/* cart total  */
+#cart-add{
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  padding: 40px 100px;
+}
+#coupon{
+width: 50%;
+}
+#coupon h3,
+#subtotal h3
+{
+font-size: 25px;
+margin-bottom: 15px;
+}
+#coupon input{
+width: 45%;
+padding: 7px 0px;
+font-size: 15px;
+margin-right: 10px;
+outline: none;
+border: 1px solid rgb(207, 198, 198);
+}
+#coupon button:hover,
+#subtotal button:hover{
+  background-color: rgb(4, 68, 4);
+}
+#coupon button,
+#subtotal button{
+  padding: 7px 15px;
+border: none;
+background-color: rgb(27, 128, 27);
+border-radius: 2px;
+color: white;
+font-size: 15px;
+font-weight: 500;
+cursor: pointer;
+}
+#subtotal h3{
+font-size: 25px;
+}
+#subtotal {
+width: 50%;
+padding: 20px;
+border: 1px solid rgb(128, 119, 119);
+margin-bottom: 30px;
+}
+#subtotal table {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  width: 100%;
+margin-bottom: 40px;
+
+
+}
+#subtotal table td {
+  font-size: 17px;
+  border: 1px solid rgb(207, 192, 192);
+  padding:10px 7px;
+  width: 50%;
+}
+
+#cart-table i{
+     color: grey; 
+
+    }
+      /* footer start  */
+      .footer .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        overflow: hidden;
+        gap: 0.1rem;
+        padding: 2rem 1rem;
+      }
+      .footer .box-container .box {
+        justify-content: center;
+        align-items: start;
+        padding: 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .footer .box-container .box h3 {
+        font-size: 1.3rem;
+        line-height: 70px;
+        color: var(--black);
+      }
+      .footer .box-container .box .logo img {
+        width: 90px;
+      }
+      .footer .box-container .box .social a {
+        width: 40px;
+        height: 40px;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        color: rgb(33, 33, 96);
+      }
+      .footer .box-container .box .social a:hover {
+        padding: 0.3rem 0;
+        color: white;
+        background-color: rgb(33, 33, 96);
+        transition: 0.4s linear;
+      }
+      .footer .box-container .box .links i:hover {
+        padding-left: 2rem;
+        transition: 0.4s linear;
+
+      }
+      .footer .box-container .box .contact a {
+        font-size: 0.9rem;
+        color: var(--black);
+        line-height: 25px;
+      }
+      .footer .box-container .box .contact span {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 25px;
+      }
+      .footer .box-container .box .links {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer .box-container .box .links a {
+        color: var(--light-color);
+        font-size: 1rem;
+        line-height: 25px;
+        margin-left: 0.4rem;
+      }
+      .footer .box-container .box .links i {
+        color: cornflowerblue;
+      }
+      .footer .box-container .box .google {
+        display: flex;
+      }
+      .footer .box-container .box .google img {
+        width: 100px;
+        border-radius: 6px;
+        margin: 5px;
+      }
+      .footer .box-container .box .google {
+        display: flex;
+      }
+      .footer .box-container .box .visa img {
+        width: 210px;
+        margin-top: 20px;
+      }
+      .footer .box-container .box h6 {
+        font-size: 1rem;
+        color: var(--light-color);
+        line-height: 45px;
+      }
+      .footer {
+        background-color: #eee;
+      }
+      .footer-2 {
+        padding: 1rem;
+        color: var(--light-color);
+      }
+      /* footer end */
+
+/* REsponsive  start*/
+
+@media (max-width:375px){
+
+
+
+   /* header start*/
+ .header .burger {
+          display: inline-block;
+          margin-left: 280px;
+          font-size: 1.2rem;
+        }
+        .header .navbar {
+          position: absolute;
+          top: 110%;
+          width: 17rem;
+          right: -110%;
+          padding: 1rem 0.5rem;
+          background-color: white;
+          border-radius: 5px;
+          box-shadow: var(--box-shadow);
+          display: flex;
+          flex-direction: column;
+        }
+        .header .navbar.active {
+          right: 0.1rem;
+          transition: 0.2s linear;
+        }
+        .header .navbar a {
+          margin: 12px;
+          font-size: 1.4rem;
+          color: var(--black);
+        }
+        /* header end  */
+/* cart head start */
+#cart-head{
+  height: 35vh;
+}
+#cart-head h1{
+  font-size: 1.9rem;
+}
+#cart-head p{
+  font-size:14px;
+  line-height: 20px;
+}
+
+/* cart head end  */
+
+/* cart table start  */
+#cart-table{
+  overflow: auto;
+}
+
+
+
+#cart-add{
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  flex-direction: column;
+  padding: 20px 50px;
+padding-right: 100px;
+}
+#coupon{
+width: 100%;
+margin-bottom: 20px;
+}
+#coupon h3,
+#subtotal h3
+{
+font-size: 20px;
+margin-bottom: 15px;
+}
+#coupon input{
+width: 100%;
+padding: 7px 5px;
+font-size: 12px;
+outline: none;
+border: 1px solid rgb(207, 198, 198);
+}
+#coupon button:hover,
+#subtotal button:hover{
+  background-color: rgb(4, 68, 4);
+}
+#coupon button,
+#subtotal button{
+  padding: 7px 15px;
+border: none;
+background-color: rgb(27, 128, 27);
+border-radius: 2px;
+color: white;
+font-size: 14px;
+font-weight: 500;
+cursor: pointer;
+}
+#coupon button{
+margin-top: 10px;
+
+}
+#subtotal h3{
+font-size: 20px;
+}
+#subtotal {
+width: 100%;
+padding: 20px;
+border: 1px solid rgb(128, 119, 119);
+margin-bottom: 30px;
+}
+#subtotal table {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  width: 100%;
+margin-bottom: 30px;
+
+
+}
+#subtotal table td {
+  font-size: 14px;
+  border: 1px solid rgb(207, 192, 192);
+  padding:10px 7px;
+  width: 50%;
+}
+
+#cart-table i{
+     color: grey; 
+
+    }
+ /* footer start  */
+ .footer .box-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+          overflow: hidden;
+          gap: 1.5rem;
+          padding: 0 1.5rem;
+        }
+        .footer .box-container .box h3 {
+          font-size: 1.2rem;
+          line-height: 50px;
+          color: var(--black);
+        }
+        .footer .box-container .box .logo img {
+          width: 90px;
+          margin-top: 20px;
+        }
+        .footer .box-container .box .social a {
+          width: 40px;
+          height: 40px;
+          background-color: cornflowerblue;
+          border-radius: 5px;
+          line-height: 40px;
+          text-align: center;
+          color: rgb(33, 33, 96);
+        }
+        .footer .box-container .box .social a:hover {
+          padding: 0.3rem 0;
+          color: white;
+          background-color: rgb(33, 33, 96);
+        }
+        .footer .box-container .box .links i:hover {
+          padding-left: 2rem;
+        }
+        .footer .box-container .box .contact a {
+          font-size: 0.9rem;
+          color: var(--black);
+          line-height: 25px;
+        }
+        .footer .box-container .box .contact span {
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 30px;
+        }
+        .footer .box-container .box .links {
+          display: flex;
+          flex-direction: column;
+        }
+        .footer .box-container .box .links a {
+          color: var(--light-color);
+          font-size: 1rem;
+          line-height: 25px;
+          margin-left: 0.4rem;
+        }
+        .footer .box-container .box .visa img {
+          width: 210px;
+          margin-top: 0px;
+        }
+        .footer-2 {
+          padding:  .6rem .5rem;
+        }
+        /* .footer end  */
+
+
+
+
+
+
+
+
+}
+
+       
+      
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+
+
+   <header class="header">
+      <nav class="navbar">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+        <a href="shop.html">shop</a>
+        <a href="blog.html">blog</a>
+        <a href="cart.html"  class="active"><i class="fa-solid fa-bag-shopping"></i></a>
+      </nav>
+
+      <div class="burger">
+        <div class="fa-solid fa-bars" id="menu-btn"></div>
+      </div>
+    </header>
+   
+  
+   <section id="cart-head" class="section-p1">
+        <h1 style="color: white;">#CART</h1>
+        
+        <p>Add YOur Coupin code & save Up-to 70%!</p>
+     
+    </section><hr>
+  <section id="cart-table" class="section-p1">
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>remove</td>
+            <td>image</td>
+            <td>product</td>
+            <td>price</td>
+            <td>quantity</td>
+            <td>subtotal</td>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#"><i class="fa-solid fa-times-circle"></i></a>
+            </td>
+            <td><img src="cora imgs/n2.jpg" alt=""></td>
+            <td>carto astronat-t-shirt</td>
+            <td>$118.9</td>
+              <td>
+            <input type="number" value="1">
+
+              </td> 
+              <td>$118.9</td>           
+          </tr>
+          <tr>
+            <td>
+              <a href="#"><i class="fa-solid fa-times-circle"></i></a>
+            </td>
+            <td><img src="cora imgs/s4.jpg" alt=""></td>
+            <td>carto astronat-t-shirt</td>
+            <td>$118.9</td>
+              <td>
+            <input type="number" value="1">
+
+              </td> 
+              <td>$118.9</td>           
+          </tr>
+          <tr>
+            <td>
+              <a href="#"><i class="fa-solid fa-times-circle"></i></a>
+            </td>
+            <td><img src="cora imgs/n3.jpg" alt=""></td>
+            <td>carto astronat-t-shirt</td>
+            <td>$118.9</td>
+              <td>
+            <input type="number" value="1">
+
+              </td> 
+              <td>$118.9</td>           
+          </tr>
+          <tr>
+            <td>
+              <a href="#"><i class="fa-solid fa-times-circle"></i></a>
+            </td>
+            <td><img src="cora imgs/n4.jpg" alt=""></td>
+            <td>carto astronat-t-shirt</td>
+            <td>$118.9</td>
+              <td>
+            <input type="number" value="1">
+
+              </td> 
+              <td>$118.9</td>           
+          </tr>
+          
+        </tbody>
+      </table>
+    </section> 
+   <section id="cart-add">
+      <div id="coupon">
+        <h3>apply coupon</h3>
+        <div>
+          <input type="text" placeholder="enter your coupon code">
+        <button>apply</button>
+        </div>
+      </div>
+      <div id="subtotal">
+        <h3>cart totals</h3>
+        <table>
+          <tr>
+            <td>cart subtotal</td>
+            <td>$335</td>
+          </tr>
+          <tr>
+            <td>shipping</td>
+            <td>free</td>
+          </tr>
+          <tr>
+            <td><strong>total</strong></td>
+            <td><strong>$335</strong></td>
+
+          </tr>
+        </table>
+        <button>process to checkout</button>
+      </div>
+    </section>
+    <!-- cart end  -->
+ <!-- footer  start  -->
+ <div class="footer">
+  <div class="box-container">
+    <div class="box">
+      <div class="logo"><img src="cora imgs/cora logo2.png" alt="" /></div>
+      <div class="contact">
+        <h3>contact</h3>
+        <span>adress:</span><a href="#">256 walbring road street 32</a
+        ><br />
+        <span>phone:</span><a href="#">+2056-777 & +92 302183265</a><br />
+        <span>hours</span><a href="#">10:00-18:00 mon-sat</a><br />
+        <h3>follow us</h3>
+      </div>
+      <div class="social">
+        <a href="#" class="fa-brands fa-facebook-f"></a>
+        <a href="#" class="fa-brands fa-twitter"></a>
+        <a href="#" class="fa-brands fa-instagram"></a>
+        <a href="#" class="fa-brands fa-linkedin"></a>
+      </div>
+    </div>
+    <div class="box">
+      <h3>about</h3>
+
+      <div class="links">
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#home">about us</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#features">delivery information</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#products">privacy policy</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#categories">terms and condition</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#reviews">contact us</a></i
+        >
+      </div>
+    </div>
+    <div class="box">
+      <h3>my account</h3>
+
+      <div class="links">
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#home">sign-in</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#features">view cart</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#products">my wallet</a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#categories">track my order </a></i
+        >
+        <i class="fa-sharp fa-solid fa-arrow-right">
+          <a href="#reviews">help</a></i
+        >
+      </div>
+    </div>
+    <div class="box">
+      <h3>install app</h3>
+      <h6>from app store or google play</h6>
+      <div class="google">
+        <div class="app">
+          <img
+            src="cora imgs/app store.png"
+            alt=""
+            style="height: 49px; width: 110px"
+          />
+        </div>
+        <div class="go-play">
+          <img
+            src="cora imgs/google play.png"
+            alt=""
+            style="border: 1px solid var(--light-color); height: 50px"
+          />
+        </div>
+      </div>
+      <h6>secured payments gateways</h6>
+      <div class="visa">
+        <img src="cora imgs/visa.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-2">
+  <center>
+    <span>&copy; 2023 | all right reserved created by kiran riaz </span>
+  </center>
+</div>
+
+<!-- footer end  -->    
+   
+    
+    
+   
+   
+   
+    
+   
+    
+   
+<script src="cora.js"></script>
+ </body>
+</html>
